@@ -14,7 +14,7 @@ export default {
         return new Promise((resovle, reject) => {
             setTimeout(() => {
                 resovle({
-                    recipes:[
+                    recipe:[
                         {
                             id: "1",
                             title: "Delicious Pizza",

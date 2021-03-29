@@ -17,7 +17,7 @@ export default {
     components: {
         Recipe
     },
-    asyncData() {
+    asyncData(context ) {
         return new Promise((resovle, reject) => {
             setTimeout(() => {
                 resovle({
