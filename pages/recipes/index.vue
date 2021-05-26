@@ -1,4 +1,5 @@
 <template>
+   
     <section class="recipes">
         <Recipe 
             v-for="recipe in recipes"
@@ -6,7 +7,7 @@
             :thumbnail="recipe.thumbnail"
             :title="recipe.title"
             :id="recipe.id"
-            :previewText="recipe.previewText"
+            :previewText="recipe.previewText"  
         />
     </section>
 </template>
@@ -19,6 +20,7 @@ export default {
     },
     asyncData(context ) {
         return new Promise((resovle, reject) => {
+            
             setTimeout(() => {
                 resovle({
                     recipes: [
@@ -27,13 +29,21 @@ export default {
                             title: "Delicious Pizza",
                             previewText: "Awesome Pizza!",
                             thumbnail: "https://miro.medium.com/max/5120/1*MfhIfzrC6x6T1-szQkjtCg.jpeg"
+                            
                         },
                         {
                             id: "2",
                             title: "Fresh Vegetables",
                             previewText: "Healthy Food!",
                             thumbnail: "https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/general-nutrition-wellness/2-2-2-2foodgroups_vegetables_detailfeature.jpg?sfvrsn=226f1bc7_6"
-                        }
+                        },
+                        {
+                            id: "3",
+                            title: "Italian Spagetti",
+                            previewText: "Spagetti Carbonara",
+                            descriptionText: "Taste the most delicious italian Spagetti!",
+                            thumbnail: "https://www.budgetbytes.com/wp-content/uploads/2018/04/The-Best-Weeknight-Pasta-Sauce-plate-H1-480x270.jpg"
+                        },
                     ]
                 })
             }, 1500)
@@ -43,12 +53,11 @@ export default {
 </script>
 
 <style scoped>
-.recipes {
+ .recipes {
     display: flex;
     flex-flow: row;
     justify-content: center;
     align-items: center;
 }
-
-</style>>
+</style>
 
